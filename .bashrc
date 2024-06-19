@@ -204,3 +204,9 @@ eval $(thefuck --alias)
 
 # ---- zoxide ----
 eval "$(zoxide init bash)"
+
+##-----------------------------------------------------
+## synth-shell-prompt.sh
+if [ -f /home/eric/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/eric/.config/synth-shell/synth-shell-prompt.sh
+fi
