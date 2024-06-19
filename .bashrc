@@ -116,7 +116,37 @@ if ! shopt -oq posix; then
   fi
 fi
 . "$HOME/.cargo/env"
-export PATH="/home/eric/.cargo/bin:/home/eric/.opam/4.14.0/bin:/home/eric/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.3.7-hotspot/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Eric/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Eric/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Eric/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/Program Files (x86)/GnuWin32/bin:/snap/bin:."
+
+# ---- PATH ----
+PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.3.0/bin"
+PATH="$PATH:/home/eric/.cargo/bin"
+PATH="$PATH:/home/eric/.opam/4.14.0/bin"
+PATH="$PATH:/home/eric/.local/bin"
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/usr/local/bin"
+PATH="$PATH:/usr/sbin"
+PATH="$PATH:/usr/bin"
+PATH="$PATH:/sbin"
+PATH="$PATH:/bin"
+PATH="$PATH:/usr/games"
+PATH="$PATH:/usr/local/games"
+PATH="$PATH:/usr/lib/wsl/lib"
+PATH="$PATH:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc"
+PATH="$PATH:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.3.7-hotspot/bin"
+PATH="$PATH:/mnt/c/WINDOWS/system32"
+PATH="$PATH:/mnt/c/WINDOWS"
+PATH="$PATH:/mnt/c/WINDOWS/System32/Wbem"
+PATH="$PATH:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+PATH="$PATH:/mnt/c/WINDOWS/System32/OpenSSH/"
+PATH="$PATH:/mnt/c/Program Files/PuTTY/"
+PATH="$PATH:/mnt/c/Program Files/dotnet/"
+PATH="$PATH:/mnt/c/Program Files/Git/cmd"
+PATH="$PATH:/mnt/c/Users/Eric/AppData/Local/Microsoft/WindowsApps"
+PATH="$PATH:/mnt/c/Users/Eric/AppData/Local/Programs/Microsoft VS Code/bin"
+PATH="$PATH:/mnt/c/Users/Eric/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+PATH="$PATH:/mnt/c/Program Files (x86)/GnuWin32/bin"
+PATH="$PATH:/snap/bin"
+export PATH="$PATH:."
 
 # ---- brew ----
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

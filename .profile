@@ -26,8 +26,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-PATH=".:$PATH"
-
 eval `opam config env`
 
 # set default text editor to vim
