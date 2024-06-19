@@ -1,5 +1,5 @@
 alias py='python3'
 alias 2proj='source /home/eric/.local/bin/2proj'
-alias update='sudo /usr/bin/apt update && sudo /usr/bin/apt full-upgrade; /home/linuxbrew/.linuxbrew/bin/brew update && /home/linuxbrew/.linuxbrew/bin/brew upgrade'
+alias update='sudo /usr/bin/apt update && sudo /usr/bin/apt -y full-upgrade; /home/linuxbrew/.linuxbrew/bin/brew update && /home/linuxbrew/.linuxbrew/bin/brew upgrade'
 alias gcc='gcc -ansi -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -Wextra'
 alias cd='z'
