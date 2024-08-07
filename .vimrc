@@ -117,10 +117,15 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Resizing split windows
 noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
+
+" Fix accidental :W or :WQ
+cnoremap W w
+cnoremap Q q
 
 set rtp^="/home/eric/.opam/4.14.0/share/ocp-indent/vim"
 
