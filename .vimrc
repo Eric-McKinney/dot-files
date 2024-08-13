@@ -124,6 +124,7 @@ noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
 " Fix accidental :W or :WQ
+" NOTE: this does prevent capital W and Q for all commands
 cnoremap W w
 cnoremap Q q
 
