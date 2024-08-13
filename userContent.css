@@ -1,0 +1,11 @@
+@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
+  .wordmark {
+    fill: #fff !important;
+    filter: drop-shadow(2px 2px 2px #222) !important;
+  }
+
+  body {
+    background: url(img/moonlight_mountain_purple.jpg) !important;
+    background-size: cover !important;
+  }
+}
