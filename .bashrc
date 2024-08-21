@@ -115,7 +115,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
+
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 
 # ---- PATH ----
 PATH="/home/linuxbrew/.linuxbrew/lib/ruby/gems/3.3.0/bin"
@@ -149,7 +152,9 @@ PATH="$PATH:/snap/bin"
 export PATH="$PATH:."
 
 # ---- brew ----
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # ---- fzf ----
 eval "$(fzf --bash)"
@@ -207,6 +212,6 @@ eval "$(zoxide init bash)"
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
-if [ -f /home/eric/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/eric/.config/synth-shell/synth-shell-prompt.sh
+if [ -f "${HOME}"/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source "${HOME}"/.config/synth-shell/synth-shell-prompt.sh
 fi
