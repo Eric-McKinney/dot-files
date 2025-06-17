@@ -112,7 +112,7 @@ then
 fi
 
 : "$(grep ".*\.default.*" ~/.mozilla/firefox/profiles.ini)"
-firefox_profile_dir="${_##*=}"  # assume the first match with .default in it is the path to the profile
+firefox_profile_dir=~/.mozilla/firefox/"${_##*=}"  # assume the first match with .default in it is the path to the profile
 
 printf "    creating directories..."
 mkdir -p "$firefox_profile_dir"/chrome/img && printf "done\n" || { printf "failed\n"; exit 1; }
