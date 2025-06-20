@@ -44,12 +44,13 @@ do
 
         case $prereq in
             ".synth-shell-prompt")
-                ~/.synth-shell-prompt/setup.sh <<-HEREDOC > /dev/null && printf "done\n" || { printf "failed\n"; exit 1; }
+                ~/.synth-shell-prompt/setup.sh <<-HEREDOC > /dev/null 2>&1 && printf "done\n" || { printf "failed\n"; exit 1; }
 					n
 				HEREDOC
                 ;;
 
             ".fzf-git")
+                mkdir ~/.config/fzf
                 cp ~/.fzf-git/fzf-git.sh ~/.config/fzf && printf "done\n" || { printf "failed\n"; exit 1; }
                 ;;
 
@@ -125,7 +126,7 @@ then
 fi
 
 printf "    linking userContent.css..."
-ln -fs "${PWD}"/userContent.css "$firefox_profile_dir"/chrome && printf "done\n" || printf "failed\n"
+cp -f "${PWD}"/userContent.css "$firefox_profile_dir"/chrome && printf "done\n" || printf "failed\n"
 printf "    copying wallpaper..."
 cp "${PWD}"/wallpapers/moonlight_mountain_purple.jpg "$firefox_profile_dir"/chrome/img && printf "done\n" || printf "failed\n"
 printf "    enabling custom stylesheets in firefox..."
@@ -138,3 +139,5 @@ else
         && printf "done\n" || printf "failed\n"
 fi
 
+echo
+echo "Install complete :)"
