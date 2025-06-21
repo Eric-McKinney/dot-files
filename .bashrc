@@ -139,6 +139,10 @@ eval "$(zoxide init bash)"
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
-if [ -f "${HOME}"/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+if [[ "$(tty)" =~ ^.*tty.*$ ]]
+then
+    # no special fonts in tty, so use a less fancy PS1
+    export PS1='\[\e[38;5;21m\]\u\[\e[0m\]@\[\e[38;5;6m\]\h\[\e[0m\]:\w \[\e[38;5;140m\]'
+elif [ -f "${HOME}"/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source "${HOME}"/.config/synth-shell/synth-shell-prompt.sh
 fi
