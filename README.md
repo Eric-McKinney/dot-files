@@ -5,3 +5,14 @@ this repo. That being said, my `.bashrc`, `.gitconfig`, and `.bash_aliases`
 contain parts that are entirely specific to me which should be changed to suit
 your system.
 
+## Install
+
+The commands shown below will install my configuration files. The install script
+also creates timestamped backups for existing configuration files before it
+overwrites them every time the script is run.
+
+```sh git clone
+https://github.com/eric-mckinney/dot-files.git ~/.dot-files
+bash ~/.dot-files/install.sh
+```
+
