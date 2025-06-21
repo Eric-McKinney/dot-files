@@ -11,8 +11,8 @@ The commands shown below will install my configuration files. The install script
 also creates timestamped backups for existing configuration files before it
 overwrites them every time the script is run.
 
-```sh git clone
-https://github.com/eric-mckinney/dot-files.git ~/.dot-files
+```sh
+git clone https://github.com/eric-mckinney/dot-files.git ~/.dot-files
 cd ~/.dot-files && bash install.sh
 ```
 
