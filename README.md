@@ -13,6 +13,6 @@ overwrites them every time the script is run.
 
 ```sh git clone
 https://github.com/eric-mckinney/dot-files.git ~/.dot-files
-bash ~/.dot-files/install.sh
+cd ~/.dot-files && bash install.sh
 ```
 
