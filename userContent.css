@@ -7,5 +7,6 @@
   body {
     background: url(img/moonlight_mountain_purple.jpg) !important;
     background-size: cover !important;
+    background-position: center !important;
   }
 }
