@@ -109,9 +109,6 @@ export BAT_THEME=OneHalfDark
 # ---- thefuck ----
 eval $(thefuck --alias)
 
-# ---- zoxide ----
-eval "$(zoxide init bash)"
-
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
 if [[ "$(tty)" =~ ^.*tty.*$ ]]
@@ -121,3 +118,7 @@ then
 elif [ -f "${HOME}"/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source "${HOME}"/.config/synth-shell/synth-shell-prompt.sh
 fi
+
+# ---- zoxide ----
+eval "$(zoxide init bash)"
+
