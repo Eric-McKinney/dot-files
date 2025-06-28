@@ -1,3 +1,11 @@
+@define-color black #181825;
+@define-color blue #94e2d5;
+@define-color green #a6e3a1;
+@define-color orange #fab387;
+@define-color purple #cba6f7;
+@define-color red #f76d6d;
+@define-color yellow #ffff70;
+
 * {
   border: none;
   border-radius: 0;
@@ -7,7 +15,7 @@
 }
 
 window#waybar {
-  background-color: #181825;
+  background-color: @black;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -71,7 +79,7 @@ window {
   margin: 6px 3px;
   padding: 6px 12px;
   background-color: #1e1e2e;
-  color: #181825;
+  color: @black;
 }
 
 #custom-logo {
@@ -85,11 +93,11 @@ window {
 
 #cpu,
 #memory {
-  background-color: #fab387;
+  background-color: @orange;
 }
 
 #battery.discharging {
-  background-color: #ffff70;
+  background-color: @yellow;
 }
 
 #battery.warning,
@@ -101,12 +109,12 @@ window {
 
 #battery.good,
 #battery.charging {
-  background-color: #a6e3a1;
-  color: #181825;
+  background-color: @green;
+  color: @black;
 }
 
 #backlight {
-  background-color: #fab387;
+  background-color: @orange;
 }
 
 #wireplumber {
@@ -114,13 +122,17 @@ window {
 }
 
 #network {
-  background-color: #94e2d5;
+  background-color: @blue;
   padding-right: 17px;
+}
+
+#network.disconnected {
+  background-color: @red;
 }
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
-  background-color: #cba6f7;
+  background-color: @purple;
 }
 
 #custom-power {
@@ -130,11 +142,11 @@ window {
 }
 
 #power-profiles-daemon {
-  color: #181825;
+  color: @black;
 }
 
 #power-profiles-daemon.performance {
-  background-color: #f76d6d;
+  background-color: @red;
 }
 
 #power-profiles-daemon.balanced {
@@ -144,16 +156,16 @@ window {
 
 #power-profiles-daemon.power-saver {
   padding-right: 16px;
-  background-color: #a6e3a1;
-  color: #181825;
+  background-color: @green;
+  color: @black;
 }
 
 #pulseaudio {
-  background-color: #94e2d5;
+  background-color: @blue;
 }
 
 #temperature {
-  background-color: #a6e3a1;
+  background-color: @green;
 }
 
 tooltip {
@@ -168,9 +180,10 @@ tooltip label {
 }
 
 #tray {
-  background-color: #94e2d5;
+  background-color: @blue;
 }
 
+menu,
 #tray menu {
   background-color: #131822;
 }
