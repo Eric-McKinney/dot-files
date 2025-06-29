@@ -87,10 +87,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
+        "interval": 5,
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "interval": 5
     },
     "temperature": {
         // "thermal-zone": 2,
