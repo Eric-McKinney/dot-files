@@ -17,8 +17,8 @@ syntax on
 " Disable the default Vim startup message.
 set shortmess+=I
 
-" Show line numbers.
-set number
+" Show relative line numbers.
+set relativenumber
 
 " I don't really like relative number
 " set relativenumber
