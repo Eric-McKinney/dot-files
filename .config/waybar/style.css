@@ -107,13 +107,17 @@ window {
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
+  margin-right: 4px;
 }
 
 #cpu,
 #memory {
   color: @purple;
+  margin-right: 6px;
 }
 
+#memory {
+  margin-right: 10px;
 }
 
 #custom-power {
@@ -122,7 +126,8 @@ window {
 }
 
 #power-profiles-daemon {
-  color: @black;
+  margin-left: 2px;
+  margin-right: 10px;
 }
 
 #power-profiles-daemon.performance {
@@ -139,6 +144,7 @@ window {
 
 #pulseaudio {
   color: @blue;
+  margin-right: 12px;
 }
 
 tooltip {
@@ -154,6 +160,7 @@ tooltip label {
 
 #tray {
   background-color: @black;
+  margin-right: 4px;
 }
 
 menu,
