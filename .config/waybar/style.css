@@ -1,10 +1,20 @@
+/* one dark colors */
+/* @define-color black #282c34; */
+@define-color red #e06c75;
+@define-color green #98c379;
+@define-color yellow #e5c07b;
+@define-color blue #61afef;
+@define-color purple #c678dd;
+@define-color cyan #56b6c2;
+@define-color white #abb2bf;
+
 @define-color black #181825;
-@define-color blue #94e2d5;
-@define-color green #a6e3a1;
-@define-color orange #fab387;
-@define-color purple #cba6f7;
-@define-color red #f76d6d;
-@define-color yellow #ffff70;
+/* @define-color blue #94e2d5; */
+/* @define-color green #a6e3a1; */
+/* @define-color orange #fab387; */
+/* @define-color purple #cba6f7; */
+/* @define-color red #f76d6d; */
+/* @define-color yellow #ffff70; */
 
 * {
   border: none;
@@ -25,7 +35,7 @@ window#waybar.hidden {
 }
 
 window {
-  color: #FFFFFF;
+  color: @white;
 }
 
 #workspaces {
@@ -75,70 +85,40 @@ window {
 #clock,
 #temperature,
 #tray {
-  border-radius: 4px;
-  margin: 6px 3px;
-  padding: 6px 12px;
-  background-color: #1e1e2e;
-  color: @black;
-}
-
-#custom-logo {
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-left: 5px;
-  font-size: 15px;
-  border-radius: 8px 0px 0px 8px;
-  color: #1793d1;
-}
-
-#cpu,
-#memory {
-  background-color: @orange;
+  /* background-color: #1e1e2e; */
+  background-color: @black;
+  color: @white;
 }
 
 #battery.discharging {
-  background-color: @yellow;
+  color: @yellow;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: #ff0000;
-  color: #FFFFFF;
+  color: @red;
 }
 
 #battery.good,
 #battery.charging {
-  background-color: @green;
-  color: @black;
-}
-
-#backlight {
-  background-color: @orange;
-}
-
-#wireplumber {
-  background-color: #f9e2af;
-}
-
-#network {
-  background-color: @blue;
-  padding-right: 17px;
-}
-
-#network.disconnected {
-  background-color: @red;
+  color: @green;
 }
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
-  background-color: @purple;
+}
+
+#cpu,
+#memory {
+  color: @purple;
+}
+
 }
 
 #custom-power {
-  padding-left: 16px;
+  color: @white;
   margin-right: 6px;
-  background-color: #f2cdcd;
 }
 
 #power-profiles-daemon {
@@ -146,26 +126,19 @@ window {
 }
 
 #power-profiles-daemon.performance {
-  background-color: @red;
+  color: @red;
 }
 
 #power-profiles-daemon.balanced {
-  padding-right: 18px;
-  background-color: #6ab0de;
+  color: @blue;
 }
 
 #power-profiles-daemon.power-saver {
-  padding-right: 16px;
-  background-color: @green;
-  color: @black;
+  color: @green;
 }
 
 #pulseaudio {
-  background-color: @blue;
-}
-
-#temperature {
-  background-color: @green;
+  color: @blue;
 }
 
 tooltip {
@@ -180,7 +153,7 @@ tooltip label {
 }
 
 #tray {
-  background-color: @blue;
+  background-color: @black;
 }
 
 menu,
