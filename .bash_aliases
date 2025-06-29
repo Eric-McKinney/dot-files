@@ -99,6 +99,12 @@ alias cd='z'
 alias find='fd'
 alias grep='rg'
 
+# --- NixOS ---
+alias ned='sudoedit /etc/nixos/configuration.nix'
+alias nrs='sudo nixos-rebuild switch'
+alias ngc='sudo nix-collect-garbage'
+alias nso='sudo nix store optimise'
+
 # --- MISC ---
 
 # Add an "alert" alias for long running commands.  Use like so:
