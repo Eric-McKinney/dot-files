@@ -76,6 +76,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias less='less -R'
 fi
 
 # some more ls aliases
@@ -93,6 +94,11 @@ alias lf='ls -l $(find . -maxdepth 1 -type f | sed "s|^\./||")'  # list files on
 alias tree='tree -CAhF --dirsfirst'
 alias treed='tree -CAFd'
 
+# --- same but better ---
+alias cd='z'
+alias find='fd'
+alias grep='rg'
+
 # --- MISC ---
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -103,5 +109,3 @@ alias py='python3'
 alias 2proj='source /home/eric/.local/bin/2proj'
 alias update='sudo /usr/bin/apt update && sudo /usr/bin/apt -y full-upgrade; /home/linuxbrew/.linuxbrew/bin/brew update && /home/linuxbrew/.linuxbrew/bin/brew upgrade; /usr/bin/flatpak update -y'
 alias gcc='gcc -ansi -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -Wextra'
-alias cd='z'
-alias less='less -R'
