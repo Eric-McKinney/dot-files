@@ -18,6 +18,7 @@ syntax on
 set shortmess+=I
 
 " Show relative line numbers.
+set number
 set relativenumber
 
 " I don't really like relative number
