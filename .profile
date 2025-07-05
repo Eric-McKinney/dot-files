@@ -26,9 +26,16 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-eval `opam config env`
+if type -p opam &>/dev/null
+then
+    eval `opam config env`
+fi
+
+if [[ -f "$HOME/.cargo/env" ]]
+    . "$HOME/.cargo/env"
+fi
+
 
 # set default text editor to vim
 EDITOR=vim
 export EDITOR
-. "$HOME/.cargo/env"
