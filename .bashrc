@@ -122,3 +122,8 @@ fi
 # ---- zoxide ----
 eval "$(zoxide init bash)"
 
+if type -p microfetch &>/dev/null
+then
+    microfetch
+fi
+
