@@ -100,7 +100,7 @@ alias ldir='ls -d */'  # list directories only
 alias lf='ls -l $(fd --max-depth 1 --type f)'  # list files only
 
 alias tree='tree -CAhF --dirsfirst'
-alias treed='tree -CAFd'
+alias treed='\tree -CAFd'
 
 # --- same but better ---
 alias cd='z'
