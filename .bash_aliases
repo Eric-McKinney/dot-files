@@ -65,6 +65,14 @@ extract() {
     done
 }
 
+update() {
+    type -p apt &>/dev/null && sudo apt update && sudo apt -y full-upgrade
+    type -p brew &>/dev/null && brew update && brew upgrade
+    type -p flatpak &>/dev/null && flatpak update -y
+    type -p wsl.exe &>/dev/null && wsl.exe --update
+    type -p nixos-rebuild &>/dev/null && sudo nixos-rebuild switch --upgrade
+}
+
 alias mktar='tar cvf'
 alias mkbz2='tar cvjf'
 alias mkgz='tar cvzf'
@@ -113,5 +121,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias py='python3'
 alias 2proj='source /home/eric/.local/bin/2proj'
-alias update='sudo /usr/bin/apt update && sudo /usr/bin/apt -y full-upgrade; /home/linuxbrew/.linuxbrew/bin/brew update && /home/linuxbrew/.linuxbrew/bin/brew upgrade; /usr/bin/flatpak update -y'
 alias gcc='gcc -ansi -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -Wextra'
