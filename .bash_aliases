@@ -87,7 +87,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias less='less -R'
 fi
 
-# some more ls aliases
+# some more ls aliases (which I'll never use)
 alias ll='ls -AlhF'    # nice long listing
 alias lx='ls -lXBh'    # sort by extension
 alias lk='ls -lSrh'    # sort by file size
@@ -97,7 +97,7 @@ alias lt='ls -ltrh'    # sort by last time modified
 alias lw='ls -xAh'     # wide listing
 alias labc='ls -lp'    # alphabetical sort
 alias ldir='ls -d */'  # list directories only
-alias lf='ls -l $(find . -maxdepth 1 -type f | sed "s|^\./||")'  # list files only
+alias lf='ls -l $(fd --max-depth 1 --type f)'  # list files only
 
 alias tree='tree -CAhF --dirsfirst'
 alias treed='tree -CAFd'
