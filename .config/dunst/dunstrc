@@ -1,0 +1,24 @@
+[global]
+    progress_bar_corner_radius = 4
+    gap_size = 5
+    font = JetBrains Mono Nerd 10
+    history_length = 40
+    browser = firefox
+    corner_radius = 10
+
+[urgency_low]
+    background = "#242424"
+    foreground = "#e6e6e6"
+    frame_color = "#242424"
+
+[urgency_normal]
+    background = "#61afef"
+    foreground = "#242424"
+    frame_color = "#61afef"
+    highlight = "#242424"
+
+[urgency_critical]
+    background = "#e06c75"
+    foreground = "#242424"
+    frame_color = "#e06c75"
+
