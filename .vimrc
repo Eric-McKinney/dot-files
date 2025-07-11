@@ -124,10 +124,3 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
-" Fix accidental :W or :WQ
-" NOTE: this does prevent capital W and Q for all commands
-cnoremap W w
-cnoremap Q q
-
-set rtp^="/home/eric/.opam/4.14.0/share/ocp-indent/vim"
-
