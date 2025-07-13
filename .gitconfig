@@ -17,3 +17,8 @@
 
 [diff]
 	colorMoved = default
+
+[alias]
+    st = status -s
+    pr = pull --rebase
+    br = branch -a
