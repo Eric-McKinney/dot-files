@@ -38,5 +38,5 @@ fi
 
 
 # set default text editor to vim
-EDITOR=vim
+EDITOR=nvim
 export EDITOR
