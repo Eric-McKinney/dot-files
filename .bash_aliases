@@ -106,6 +106,8 @@ alias treed='\tree -CAFd'
 alias cd='z'
 alias find='fd'
 alias grep='rg'
+alias vim='nvim'
+alias vi='\vim'
 
 # --- NixOS ---
 alias ned='sudoedit /etc/nixos/configuration.nix'
