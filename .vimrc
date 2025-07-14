@@ -21,9 +21,6 @@ set shortmess+=I
 set number
 set relativenumber
 
-" I don't really like relative number
-" set relativenumber
-
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
@@ -54,9 +51,6 @@ nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
-
-" Mouse support breaks copy paste for me
-" set mouse+=a
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
@@ -92,7 +86,7 @@ set showmode
 " show serach as we type
 set incsearch
 
-" Make double-<Esc> clear search highlights
+" Make double <Esc> clear search highlights
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 " Set 7 lines to the cursor - when moving vertically using j/k
@@ -124,3 +118,32 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
+" netrw
+nnoremap - :Ex
+nnoremap <silent> ~ :edit ~/<CR>
+let g:netrw_banner=0
+let g:netrw_preview=1
+let g:netrw_altv=1
+let g:netrw_winsize=30
+let g:netrw_liststyle=3
+
+let g:mapleader=' '
+
+" write file (I always accidentally type :W so this circumvents that and its faster)
+nnoremap <leader>w :w<CR>
+
+" awesome visual mode text chunk moving
+vmap <S-j> :m '>+1<CR>gv=gv
+vmap <S-k> :m '<-2<CR>gv=gv
+
+" make current file executable
+nnoremap <silent> <leader>x :!chmod +x %<CR>
+
+" don't move cursor for <S-j>
+nnoremap <S-j> mz<S-j>`z
+
+" keep cursor centered for searches, <C-u>, <C-d>
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
