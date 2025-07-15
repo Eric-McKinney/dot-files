@@ -18,12 +18,9 @@ cd ~/.dot-files && bash install.sh
 
 ## Colors
 
-I typically use onedark or onehalfdark color schemes. For the terminal colors,
-most onedark or onehalfdark themes (that I could find) keep the bright colors
-and regular colors the same. I don't really like this, so I chose my own bright
-versions of each onedark color (of the standard 8 terminal colors). I also
-changed the standard black and white to be a bit more appealing for me. I often
-pull from these colors when configuring tools I plan on using.
+My modified onedark color scheme below:
+
+![colors shown in the terminal](./term_colors.png)
 
 |      color      |   hex   |       rgb       |
 |-----------------|---------|-----------------|
