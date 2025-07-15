@@ -119,7 +119,7 @@ noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
 " netrw
-nnoremap - :Ex
+nnoremap - :Ex<CR>
 nnoremap <silent> ~ :edit ~/<CR>
 let g:netrw_banner=0
 let g:netrw_preview=1
