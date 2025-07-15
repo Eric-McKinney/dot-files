@@ -22,6 +22,11 @@ My modified onedark color scheme below:
 
 ![colors shown in the terminal](./term_colors.png)
 
+Changes from your typical onedark:
+
+- Different black and white
+- Different bright colors
+
 |      color      |   hex   |       rgb       |
 |-----------------|---------|-----------------|
 | black           | #242424 | (36,  36,  36)  |
