@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 
 -- netrw
 vim.keymap.set('n', '-', vim.cmd.Ex, { noremap = true, desc = 'Open netrw' })
-vim.keymap.set('n', '~', ':edit ~/<CR>', { silent = true, noremap = true, desc = 'Open netrw in ~/' })
+vim.keymap.set('n', '<leader>~', ':edit ~/<CR>', { silent = true, noremap = true, desc = 'Open netrw in ~/' })
 
 -- editing
 vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = 'Save file' })
