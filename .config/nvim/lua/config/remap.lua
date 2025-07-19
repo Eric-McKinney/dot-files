@@ -24,7 +24,7 @@ vim.keymap.set('n', '<leader>Y', '"+Y', { desc = 'Yank to system clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete to void register' })
 
 -- bash scripting wet dream
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make current file executable' })
+vim.keymap.set('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make current file executable' })
 
 vim.keymap.set('n', '<Esc><Esc>', vim.cmd.nohlsearch, { silent = true, desc = 'Clear search highlighting' })
 
