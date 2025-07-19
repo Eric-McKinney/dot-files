@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+printf "checking cwd is .dot-files or dot-files..."
+if [[ ! "${PWD##*/}" =~ ^\.?dot-files$ ]]
+then
+    printf "it isn't\n"
+    if [[ -d ~/.dot-files ]]
+    then
+        printf "cd'ing to ~/.dot-files..."
+        cd ~/.dot-files && echo "done" || { echo "failed"; exit 1; }
+    elif [[ -d ~/dot-files ]]
+    then
+        printf "cd'ing to ~/dot-files..."
+        cd ~/dot-files && echo "done" || { echo "failed"; exit 1; }
+    else echo "error: neither ~/.dot-files or ~/dot-files exist"; exit 1
+    fi
+fi
+
 # files that would work with gnu stow (aka path relative to dot-files/ is same as relative to ~)
 # basically almost everything
 stowable=(.config/*/* .bash_aliases .bashrc .gitconfig .profile .vimrc)
