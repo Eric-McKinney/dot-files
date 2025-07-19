@@ -32,7 +32,7 @@ do
     fi
 done
 
-printf "checking if required directories exist...\n"
+echo "checking if required directories exist..."
 required_dirs=(.config/*/ .vim/colors/)
 dirs_created=0
 for dir in "${required_dirs[@]}"
@@ -40,14 +40,14 @@ do
     if [[ ! -d ~/$dir ]]
     then
         printf "    missing ~/$dir, creating it..."
-        mkdir -p ~/"$dir" && printf "done\n" || { printf "failed\n"; exit 1; }
+        mkdir -p ~/"$dir" && echo "done" || { echo "failed"; exit 1; }
         (( dirs_created++ ))
     fi
 done
 
 [[ $dirs_created -eq 0 ]] && printf "\033[1A\033[42Gdone\n"
 
-printf "installing dependencies...\n"
+echo "installing dependencies..."
 declare -A prereqs  # keys: directory, values: git repo url
 prereqs[".synth-shell-prompt"]="https://github.com/andresgongora/synth-shell-prompt.git"
 prereqs[".fzf-git"]="https://github.com/junegunn/fzf-git.sh"
@@ -57,57 +57,57 @@ do
     if [[ ! -d ~/$prereq ]]
     then
         printf "    downloading ${prereq##~/.}..."
-        git clone --recursive ${prereqs[$prereq]} ~/$prereq > /dev/null 2>&1 && printf "done\n" || { printf "failed\n"; exit 1; }
+        git clone --recursive ${prereqs[$prereq]} ~/$prereq > /dev/null 2>&1 && echo "done" || { echo "failed"; exit 1; }
         printf "    installing ${prereq##~/.}..."
 
         case $prereq in
             ".synth-shell-prompt")
-                ~/.synth-shell-prompt/setup.sh <<-HEREDOC > /dev/null 2>&1 && printf "done\n" || { printf "failed\n"; exit 1; }
+                ~/.synth-shell-prompt/setup.sh <<-HEREDOC > /dev/null 2>&1 && echo "done" || { echo "failed"; exit 1; }
 					n
 				HEREDOC
                 ;;
 
             ".fzf-git")
                 mkdir ~/.config/fzf
-                cp ~/.fzf-git/fzf-git.sh ~/.config/fzf && printf "done\n" || { printf "failed\n"; exit 1; }
+                cp ~/.fzf-git/fzf-git.sh ~/.config/fzf && echo "done" || { echo "failed"; exit 1; }
                 ;;
 
             *)
-                printf "$prereq has unimplemented installation step!!\n"
+                echo "$prereq has unimplemented installation step!!"
                 exit 1
                 ;;
         esac
     fi
 done
 
-printf "creating symbolic links...\n"
+echo "creating symbolic links..."
 for file in "${stowable[@]}"
 do
     printf "    linking ${file##*/}..."
-    ln -fs "${PWD}/$file" ~/"$file" && printf "done\n" || { printf "failed\n"; exit 1; }
+    ln -fs "${PWD}/$file" ~/"$file" && echo "done" || { echo "failed"; exit 1; }
 done
 
 # vim themes don't work as symbolic links :(
 # but were you going to edit them anyways?
-printf "copying vim themes...\n"
+echo "copying vim themes..."
 for theme in .vim/colors/*
 do
     : "${theme##*/}"
     : "${_%%.vim}"  # strip all but actual name of theme
     printf "    copying $_..."
-    cp "$theme" ~/"$theme" && printf "done\n" || { printf "failed\n"; exit 1; }
+    cp "$theme" ~/"$theme" && echo "done" || { echo "failed"; exit 1; }
 done
 
 # firefox :/
-printf "configuring firefox...\n"
+echo "configuring firefox..."
 
 if [[ ! -f ~/.mozilla/firefox/profiles.ini ]]
 then
-    printf "    no profile directory detected, creating it...\n"
-    printf "        starting firefox in headless mode..."
+    echo "    no profile directory detected, creating it..."
+    echo "        starting firefox in headless mode..."
     (firefox --headless > /dev/null 2>&1 &)  # subshell to avoid job related output
     (:;:)  # microsleep
-    pidof firefox > /dev/null && printf "done\n" || printf "failed\n"
+    pidof firefox > /dev/null && echo "done" || echo "failed"
     printf "        waiting for profile directory to be created..."
 
     i=0
@@ -115,7 +115,7 @@ then
     do
         if [[ $i -ge 300 ]]
         then
-            printf "timed out\n"
+            echo "timed out"
             exit 1
         fi
 
@@ -124,37 +124,37 @@ then
         (( i++ ))
     done
     sleep 2  # wait a little longer just because
-    printf "done\n"
+    echo "done"
 
     printf "        closing firefox..."
-    kill $(pidof firefox) && printf "done\n" || printf "failed\n"
+    kill $(pidof firefox) && echo "done" || echo "failed"
 fi
 
 : "$(grep ".*\.default.*" ~/.mozilla/firefox/profiles.ini)"
 firefox_profile_dir=~/.mozilla/firefox/"${_##*=}"  # assume the first match with .default in it is the path to the profile
 
 printf "    creating directories..."
-mkdir -p "$firefox_profile_dir"/chrome/img && printf "done\n" || { printf "failed\n"; exit 1; }
+mkdir -p "$firefox_profile_dir"/chrome/img && echo "done" || { echo "failed"; exit 1; }
 
 if [[ -f $firefox_profile_dir/chrome/userContent.css ]]
 then
     printf "    backing up userContent.css..."
     cp "$firefox_profile_dir"/chome/userContent.css "$firefox_profile_dir/chrome/userContent.css-$(date +%D_%H:%M:%S)".bak \
-        && printf "done\n" || { printf "failed\n"; exit 1; }
+        && echo "done" || { echo "failed"; exit 1; }
 fi
 
 printf "    linking userContent.css..."
-cp -f "${PWD}"/userContent.css "$firefox_profile_dir"/chrome && printf "done\n" || printf "failed\n"
+cp -f "${PWD}"/userContent.css "$firefox_profile_dir"/chrome && echo "done" || echo "failed"
 printf "    copying wallpaper..."
-cp "${PWD}"/wallpapers/moonlight_mountain_purple.jpg "$firefox_profile_dir"/chrome/img && printf "done\n" || printf "failed\n"
+cp "${PWD}"/wallpapers/moonlight_mountain_purple.jpg "$firefox_profile_dir"/chrome/img && echo "done" || echo "failed"
 printf "    enabling custom stylesheets in firefox..."
 if [[ -z $(grep "toolkit\.legacyUserProfileCustomizations\.stylesheets" "$firefox_profile_dir"/prefs.js) ]]
 then
     printf 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> "$firefox_profile_dir"/prefs.js \
-        && printf "done\n" || printf "failed\n"
+        && echo "done" || echo "failed"
 else
     sed -ri 's/(user_pref\("toolkit.legacyUserProfileCustomizations.stylesheets",).*/\1 true\);/' "$firefox_profile_dir"/prefs.js \
-        && printf "done\n" || printf "failed\n"
+        && echo "done" || echo "failed"
 fi
 
 echo
