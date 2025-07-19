@@ -26,7 +26,9 @@ do
     if [[ -f ~/$file ]]
     then
         printf "    backing up ${file##*/}..."
-        cp ~/"$file" ~/"$file-$(date +%m-%d-%y_%H:%M:%S)".bak && printf "done\n" || { printf "failed\n"; exit 1; }
+        cp -r ~/"$file" ~/"$file-$(date +%m-%d-%y_%H:%M:%S)".bak && echo "done" || { echo "failed"; exit 1; }
+        printf "    removing original ${file##*/}..."
+        rm -rf ~/"$file" && echo "done" || { echo "failed"; exit 1; }
     fi
 done
 
