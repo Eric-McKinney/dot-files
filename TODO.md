@@ -2,7 +2,9 @@
 
 ## nvim
 
-- fix trouble keybind conflicts (and evaluate whether or not to keep it)
+- https://github.com/echasnovski/mini.nvim
+  - not all of the mini suite, but some are bangers
+- https://github.com/L3MON4D3/LuaSnip
 - LSP
   - dont forget nix (in treesitter too)
 - like actually everything by Tim Pope
