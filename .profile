@@ -37,6 +37,7 @@ then
 fi
 
 
-# set default text editor to vim
-EDITOR=nvim
-export EDITOR
+# set default text editor to neovim
+export EDITOR=nvim
+# and default sudo editor to vim
+export SUDO_EDITOR=vim
