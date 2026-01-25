@@ -100,8 +100,6 @@ set mat=2
 colorscheme one
 set background=dark
 set termguicolors
-" transparent background
-hi Normal guibg=NONE ctermbg=NONE
 
 set cursorline
 set colorcolumn=120
