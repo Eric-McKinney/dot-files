@@ -12,7 +12,7 @@ vim.opt.guicursor = ""
 
 -- line highlights
 vim.opt.cursorline = true
-vim.opt.colorcolumn = '120'
+vim.opt.colorcolumn = '90'
 
 -- scroll screen when cursor is within 7 lines
 vim.opt.scrolloff = 7

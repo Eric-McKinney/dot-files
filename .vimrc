@@ -102,7 +102,7 @@ set background=dark
 set termguicolors
 
 set cursorline
-set colorcolumn=120
+set colorcolumn=90
 
 " Moving between windows
 map <C-j> <C-W>j
