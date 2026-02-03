@@ -106,9 +106,6 @@ export FZF_DEFAULT_OPTS="--color=hl:${dodger_blue},hl+:${light_sky_blue},info:${
 # ---- bat ----
 export BAT_THEME=OneHalfDark
 
-# ---- thefuck ----
-eval $(thefuck --alias)
-
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
 if [[ "$(tty)" =~ ^.*tty.*$ ]]
