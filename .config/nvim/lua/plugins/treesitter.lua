@@ -16,6 +16,7 @@ return {
                 "gitcommit",
                 "gitignore",
                 "gitattributes",
+                "haskell",
                 "html",
                 "javascript",
                 "jsdoc",
