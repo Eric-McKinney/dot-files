@@ -16,7 +16,6 @@ vim.keymap.set('i', '<S-Tab>', '<C-V><Tab>', { desc = 'Insert a tab character' }
 vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', { desc = 'Replace current word' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection up a line' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection down a line' })
-vim.keymap.set('n', '<C-a>', 'goVG', { silent = true, desc = 'Select all text in file' })
 
 -- a little big of register trickery
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
