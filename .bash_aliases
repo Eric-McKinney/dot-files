@@ -115,6 +115,20 @@ alias nrs='sudo nixos-rebuild switch'
 alias ngc='sudo nix-collect-garbage'
 alias nso='sudo nix store optimise'
 
+# --- WSL ---
+if [[ -d /mnt/c/WINDOWS/system32 ]]
+then
+    # pipe to this to copy to the system clipboard (for wsl only)
+    # ex: cat file | copy
+    alias copy='clip.exe'
+    # echo contents of system clipboard (for wsl only)
+    # ex: paste > file
+    alias paste='powershell.exe -command "Get-Clipboard"'
+    # change CRLF to LF in a file
+    # ex: dos2unix file
+    alias dos2unix="sed -i 's/\r$//'"
+fi
+
 # --- MISC ---
 
 # Add an "alert" alias for long running commands.  Use like so:
