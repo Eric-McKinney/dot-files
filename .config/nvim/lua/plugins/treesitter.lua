@@ -1,48 +1,44 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	build = function()
-		require("nvim-treesitter.install").update({ with_sync = true })()
-	end,
+    lazy = false,
+    build = ':TSUpdate',
     config = function()
-        local configs = require("nvim-treesitter.configs")
-        
-        configs.setup({
-            ensure_installed = {
-                "bash",
-                "c",
-                "diff",
-                "git_config",
-                "git_rebase",
-                "gitcommit",
-                "gitignore",
-                "gitattributes",
-                "haskell",
-                "html",
-                "javascript",
-                "jsdoc",
-                "json",
-                "jsonc",
-                "lua",
-                "luadoc",
-                "luap",
-                "markdown",
-                "markdown_inline",
-                "nix",
-                "printf",
-                "python",
-                "query",
-                "regex",
-                "toml",
-                "tsx",
-                "typescript",
-                "vim",
-                "vimdoc",
-                "xml",
-                "yaml",
-            },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
+        local main = require('nvim-treesitter')
+        main.setup {
+            install_dir = vim.fn.stdpath('data') .. '/site'
+        }
+
+        main.install {
+            "bash",
+            "c",
+            "diff",
+            "git_config",
+            "git_rebase",
+            "gitcommit",
+            "gitignore",
+            "gitattributes",
+            "haskell",
+            "html",
+            "javascript",
+            "jsdoc",
+            "json",
+            "lua",
+            "luadoc",
+            "luap",
+            "markdown",
+            "markdown_inline",
+            "nix",
+            "printf",
+            "python",
+            "query",
+            "regex",
+            "toml",
+            "tsx",
+            "typescript",
+            "vim",
+            "vimdoc",
+            "xml",
+            "yaml",
+        }
     end,
 }
