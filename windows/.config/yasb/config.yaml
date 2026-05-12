@@ -321,7 +321,7 @@ widgets:
         on_right: "toggle_menu"
       memory_thresholds:
         low: 25
-        medium: 50
+        medium: 60
         high: 90
       histogram_icons:
         - "\u2581" # 0%
