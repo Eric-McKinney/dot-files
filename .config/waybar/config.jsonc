@@ -45,6 +45,14 @@
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "privacy": {
+        "modules": [
+            {
+                "type": "audio-in",
+                "icon-name": "audio-input-microphone-symbolic"
+            }
+        ]
+    },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
