@@ -67,7 +67,7 @@ extract() {
 
 update() {
     type -p apt &>/dev/null && sudo apt update && sudo apt -y full-upgrade
-    type -p brew &>/dev/null && brew update && brew upgrade
+    type -p brew &>/dev/null && brew update && brew upgrade -y
     type -p flatpak &>/dev/null && flatpak update -y
     type -p wsl.exe &>/dev/null && wsl.exe --update
     type -p nixos-rebuild &>/dev/null && sudo nixos-rebuild switch --upgrade
